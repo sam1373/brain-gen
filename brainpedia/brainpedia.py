@@ -35,15 +35,19 @@ class Brainpedia:
         # Load data from preprocessed binary files.
         brain_data = np.array(self.preprocessor.brain_data())
         brain_data_tags = np.array(self.preprocessor.brain_data_tags())
+
         return brain_data, brain_data_tags
 
-    def train_test_split(self):
+    def train_test_split(self, seed = 179):
         # Load all data from preprocessed binary files.
         brain_data = self.preprocessor.brain_data()
         brain_data_tags = self.preprocessor.brain_data_tags()
         epoch_length = len(brain_data_tags)
 
         # Shuffle data
+        #if not rng_state is None:
+        #    np.random.set_state(rng_state)
+        np.random.seed(seed)
         rng_state = np.random.get_state()
         np.random.shuffle(brain_data)
         np.random.set_state(rng_state)

@@ -116,7 +116,7 @@ class Preprocessor:
             #print("PERCENT COMPLETE: {0:.2f}%\r".format(100.0 * float(num_processed) / float(total_num_files)), end='')
 
             #if len(brai))
-            print(filename, len(brain_data))
+            #print(filename, len(brain_data))
             #if filename.find('35380') != -1:
             #    print("skipped")
             #    continue
